@@ -2,12 +2,13 @@ name: Daily Weather Notification
 
 on:
   schedule:
-    - cron: '0 22 * * *'  # UTC 时间 22:00 -> 北京时间 6:00
-  workflow_dispatch:
+    - cron: '0 22 * * *'  # 每天 UTC 时间 22:00，即北京时间早上 6:00 运行
+  workflow_dispatch:  # 支持手动触发
 
 jobs:
   weather-task:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -22,16 +23,16 @@ jobs:
           pip install requests pypinyin schedule
 
       - name: Download previous temperature_record artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: temperature-record
           path: .
 
-      - name: Run script
+      - name: Run weather script
         run: python main.py
 
       - name: Upload updated temperature_record.json
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: temperature-record
           path: temperature_record.json
