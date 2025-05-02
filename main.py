@@ -91,7 +91,7 @@ def calculate_temperature_change(key, today_max_temp):
     except Exception as e:
         print(f"读取温度记录失败: {e}")
 
-    return "
+    return ""
 
 
 # 发送Bark通知
