@@ -4,6 +4,7 @@ import requests
 import json
 import time
 from pypinyin import lazy_pinyin
+from zoneinfo import ZoneInfo
 
 import schedule
 
@@ -51,7 +52,7 @@ def save_max_temp(key, max_temp):
 
         # 保存最高温度
         city_name = CITIES[key]["city_name"]
-        temperature_record[city_name] = {"max_temp": max_temp, "date": datetime.now().strftime('%Y-%m-%d')}
+        temperature_record[city_name] = {"max_temp": max_temp, "date": datetime.now(ZoneInfo("Asia/Shanghai")).strftime('%Y-%m-%d')}
 
         # 将记录保存到文件
         with open(TEMP_RECORD_FILE, "w", encoding="utf-8") as f:  # 指定UTF-8编码
@@ -77,7 +78,7 @@ def calculate_temperature_change(key, today_max_temp):
                 record_date = city_record.get("date")
 
                 # 获取昨天的日期
-                yesterday_date = (datetime.now() - timedelta(1)).strftime('%Y-%m-%d')
+                yesterday_date = (datetime.now(ZoneInfo("Asia/Shanghai")) - timedelta(1)).strftime('%Y-%m-%d')
 
                 # 只有当记录的日期是昨天时才进行温度变化计算
                 if record_date == yesterday_date and yesterday_max_temp is not None:
