@@ -10,6 +10,7 @@ import schedule
 
 # 配置
 API_KEY = "2e2eeb1703da4949988b5bd59c2aaf2e"  # 和风天气 API Key
+# https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv
 CITIES = {
     "TcKAYAx3b4XFf3xJmJ6NDP": {"city_name": "钱塘", "city_id": "101210111"},
     "SrPBHD3H7pQwstdXZWsKC3": {"city_name": "东阳", "city_id": "101210905"}
@@ -123,16 +124,6 @@ def send_bark_notification():
         except requests.exceptions.RequestException as e:
             print(f"发送通知失败: {e}")
 
-# 定时任务，定时发送天气通知
-def run_weather_scheduler():
-    """每天定时发送天气通知"""
-    schedule.every().day.at("06:00").do(send_bark_notification)
-    while True:
-        schedule.run_pending()
-        time.sleep(60)  # 每分钟检查一次任务
 
 if __name__ == "__main__":
-    # 启动定时任务
-    # run_weather_scheduler()
-
-    send_bark_notification()  # 立刻发送天气通知（可选择使用）
+    send_bark_notification()

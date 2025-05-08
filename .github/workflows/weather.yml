@@ -27,7 +27,7 @@ jobs:
           pip install requests schedule pypinyin
 
       - name: Run weather script
-        run: python main.py
+        run: python daily_weather.py
 
       - name: Commit temperature record
         run: |
