@@ -6,8 +6,6 @@ import time
 from pypinyin import lazy_pinyin
 from zoneinfo import ZoneInfo
 
-import schedule
-
 # 配置
 API_KEY = "2e2eeb1703da4949988b5bd59c2aaf2e"  # 和风天气 API Key
 # https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv
