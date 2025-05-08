@@ -1,4 +1,4 @@
-name: Weather Summary Notification
+name: Weather Abstract Notification
 
 on:
   schedule:
