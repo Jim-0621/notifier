@@ -11,7 +11,7 @@ import schedule
 # 配置
 API_KEY = "2e2eeb1703da4949988b5bd59c2aaf2e"  # 和风天气 API Key
 CITIES = {
-    "TcKAYAx3b4XFf3xJmJ6NDP": {"city_name": "磐安", "city_id": "101210908"},
+    "TcKAYAx3b4XFf3xJmJ6NDP": {"city_name": "钱塘", "city_id": "101210111"},
     "SrPBHD3H7pQwstdXZWsKC3": {"city_name": "东阳", "city_id": "101210905"}
 }
 BARK_KEYS = list(CITIES.keys())  # 获取所有Bark密钥
