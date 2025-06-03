@@ -5,7 +5,7 @@ from pypinyin import lazy_pinyin
 # ========== 城市信息直接写在代码中 ==========
 CITIES = {
     "TcKAYAx3b4XFf3xJmJ6NDP": {"city_name": "钱塘", "city_id": "101210111"},
-    "SrPBHD3H7pQwstdXZWsKC3": {"city_name": "东阳", "city_id": "101210905"}
+    "SrPBHD3H7pQwstdXZWsKC3": {"city_name": "官渡", "city_id": "101290115"}
 }
 
 # ========== 抓取天气摘要并推送 ==========
