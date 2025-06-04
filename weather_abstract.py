@@ -41,7 +41,7 @@ def send_weather_summary_notification():
 
         try:
             requests.get(bark_url).raise_for_status()
-            print(f"[摘要通知] 已发送：{summary}")
+            print(f"[摘要通知] 已发送：{city['city_name']} {summary}")
         except Exception as e:
             print(f"[摘要通知] 发送失败: {e}")
 
