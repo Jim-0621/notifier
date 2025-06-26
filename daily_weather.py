@@ -10,7 +10,7 @@ from zoneinfo import ZoneInfo
 API_KEY = "2e2eeb1703da4949988b5bd59c2aaf2e"  # 和风天气 API Key
 # https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv
 CITIES = {
-    "TcKAYAx3b4XFf3xJmJ6NDP": {"city_name": "钱塘", "city_id": "101210111"},
+    "TcKAYAx3b4XFf3xJmJ6NDP": {"city_name": "临安", "city_id": "101210107"},
     "SrPBHD3H7pQwstdXZWsKC3": {"city_name": "官渡", "city_id": "101290115"}
 }
 BARK_KEYS = list(CITIES.keys())  # 获取所有Bark密钥
